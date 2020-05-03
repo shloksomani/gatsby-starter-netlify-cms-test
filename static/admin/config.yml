@@ -15,15 +15,15 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - file: "src/pages/index.md"
+      - file: "src/pages/home/index.md"
         label: "Landing Page"
-        name: "index"
+        name: "home"
         fields:
           - {
               label: "Template Key",
               name: "templateKey",
               widget: "hidden",
-              default: "index-page",
+              default: "home-page",
             }
           - {
               label: "SEO & Meta",

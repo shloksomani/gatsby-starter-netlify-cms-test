@@ -1,6 +1,9 @@
-import React from "react";
+// import React from "react";
+// import PropTypes from "prop-types";
+// import { Link, graphql } from "gatsby";
 
-import Layout from "../components/Layout";
+// import Layout from "../components/Layout";
+// import Features from "../components/Features";
 
 // export const IndexPageTemplate = ({
 //   image,
@@ -12,16 +15,7 @@ import Layout from "../components/Layout";
 //   intro,
 // }) => (
 //   <div>
-//     <div
-//       className="full-width-image margin-top-0"
-//       style={{
-//         backgroundImage: `url(${
-//           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-//         })`,
-//         backgroundPosition: `top left`,
-//         backgroundAttachment: `fixed`,
-//       }}
-//     >
+//     <div className="full-width-image margin-top-0" style={{}}>
 //       <div
 //         style={{
 //           display: "flex",
@@ -94,7 +88,6 @@ import Layout from "../components/Layout";
 //                   <h3 className="has-text-weight-semibold is-size-2">
 //                     Latest stories
 //                   </h3>
-//                   <BlogRoll />
 //                   <div className="column is-12 has-text-centered">
 //                     <Link className="btn" to="/blog">
 //                       Read more
@@ -122,10 +115,55 @@ import Layout from "../components/Layout";
 //   }),
 // };
 
-export default function IndexPage() {
-  return (
-    <Layout>
-      <h1>HEREEEEEEE</h1>
-    </Layout>
-  );
-}
+// const IndexPage = ({ data }) => {
+//   const { frontmatter } = data.markdownRemark;
+
+//   return (
+//     <Layout>
+//       <IndexPageTemplate
+//         image={frontmatter.image}
+//         title={frontmatter.title}
+//         heading={frontmatter.heading}
+//         subheading={frontmatter.subheading}
+//         mainpitch={frontmatter.mainpitch}
+//         description={frontmatter.description}
+//         intro={frontmatter.intro}
+//       />
+//     </Layout>
+//   );
+// };
+
+// IndexPage.propTypes = {
+//   data: PropTypes.shape({
+//     markdownRemark: PropTypes.shape({
+//       frontmatter: PropTypes.object,
+//     }),
+//   }),
+// };
+
+// export default IndexPage;
+
+// export const pageQuery = graphql`
+//   query IndexPageTemplate {
+//     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+//       frontmatter {
+//         title
+
+//         heading
+//         subheading
+//         mainpitch {
+//           title
+//           description
+//         }
+//         description
+//         intro {
+//           blurbs {
+//             text
+//           }
+//           heading
+//           description
+//         }
+//       }
+//     }
+//   }
+// `;
