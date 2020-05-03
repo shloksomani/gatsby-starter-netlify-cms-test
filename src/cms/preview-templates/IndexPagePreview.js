@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { IndexPageTemplate } from "../../templates/index-page";
 
-export const IndexPagePreview = ({ entry, getAsset }) => {
+export const IndexPagePreview = ({ entry, getAsset, widgetFor }) => {
   const data = entry.getIn(["data"]).toJS();
 
   if (data) {
@@ -13,8 +13,7 @@ export const IndexPagePreview = ({ entry, getAsset }) => {
         heading={data.heading}
         subheading={data.subheading}
         description={data.description}
-        intro={data.intro || { blurbs: [] }}
-        mainpitch={data.mainpitch || {}}
+        content={widgetFor("body")}
       />
     );
   } else {
@@ -27,4 +26,5 @@ IndexPagePreview.propTypes = {
     getIn: PropTypes.func,
   }),
   getAsset: PropTypes.func,
+  widgetFor: PropTypes.func,
 };

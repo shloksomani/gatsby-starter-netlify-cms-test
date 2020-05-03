@@ -1,83 +1,93 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
+import Content, { HTMLContent } from "../components/Content";
 
 import Layout from "../components/Layout";
 import Features from "../components/Features";
 
-export const IndexPageTemplate = ({ title, heading, image, subheading }) => (
-  <div>
-    <div
-      className="full-width-image margin-top-0"
-      style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`,
-        backgroundPosition: `top left`,
-        backgroundAttachment: `fixed`,
-      }}
-    >
+export const IndexPageTemplate = ({
+  title,
+  heading,
+  image,
+  subheading,
+  content,
+  contentComponent,
+}) => {
+  const PostContent = contentComponent || Content;
+  return (
+    <div>
       <div
+        className="full-width-image margin-top-0"
         style={{
-          display: "flex",
-          height: "150px",
-          lineHeight: "1",
-          justifyContent: "space-around",
-          alignItems: "left",
-          flexDirection: "column",
+          backgroundImage: `url(${
+            !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+          })`,
+          backgroundPosition: `top left`,
+          backgroundAttachment: `fixed`,
         }}
       >
-        <h1
-          className="is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+        <div
           style={{
-            color: "white",
-            lineHeight: "2",
-            padding: "0.25em",
-            letterSpacing: "5px",
-            borderBottom: "3px solid white",
-            display: "inline-block",
-            padding: "0 1.5rem",
-            paddingBottom: "10px",
+            display: "flex",
+            height: "150px",
+            lineHeight: "1",
+            justifyContent: "space-around",
+            alignItems: "left",
+            flexDirection: "column",
           }}
         >
-          {title}
-        </h1>
+          <h1
+            className="is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+            style={{
+              color: "white",
+              lineHeight: "2",
+              padding: "0.25em",
+              letterSpacing: "5px",
+              borderBottom: "3px solid white",
+              display: "inline-block",
+              padding: "0 1.5rem",
+              paddingBottom: "10px",
+            }}
+          >
+            {title}
+          </h1>
+        </div>
       </div>
-    </div>
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="section">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <div className="content">
-                <div className="columns">
-                  <div className="column is-12" style={{ color: "#000066" }}>
-                    {subheading}
-                    <br />
-                    <br />
-                    <h3 style={{ fontSize: "18px" }}>Overview:</h3>
-                    <br />
-                    <br />
+      <section className="section section--gradient">
+        <div className="container">
+          <div className="section">
+            <div className="columns">
+              <div className="column is-10 is-offset-1">
+                <div className="content">
+                  <div className="columns">
+                    <div className="column is-12" style={{ color: "#000066" }}>
+                      {subheading}
+                      <br />
+                      <br />
+                      <div>
+                        <PostContent content={content} />
+                      </div>
+                      <br />
+                      <br />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  </div>
-);
-
+      </section>
+    </div>
+  );
+};
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
-  mainpitch: PropTypes.object,
   description: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
+  content: PropTypes.node.isRequired,
+  contentComponent: PropTypes.func,
 };
 
 const IndexPage = ({ data }) => {
@@ -86,11 +96,11 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
+        content={frontmatter.html}
+        contentComponent={HTMLContent}
         image={frontmatter.image}
         title={frontmatter.title}
-        mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
-        intro={frontmatter.intro}
         subheading={frontmatter.subheading}
       />
     </Layout>
@@ -112,6 +122,8 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
+        heading
+        subheading
         image {
           childImageSharp {
             fluid(maxWidth: 2048, quality: 100) {
@@ -119,8 +131,6 @@ export const pageQuery = graphql`
             }
           }
         }
-        heading
-        subheading
       }
     }
   }
