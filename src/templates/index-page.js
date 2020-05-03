@@ -96,7 +96,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        content={frontmatter.html}
+        content={data.markdownRemark.html}
         contentComponent={HTMLContent}
         image={frontmatter.image}
         title={frontmatter.title}
@@ -120,6 +120,7 @@ export default IndexPage;
 export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+      html
       frontmatter {
         title
         heading

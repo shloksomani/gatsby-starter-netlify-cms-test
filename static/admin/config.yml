@@ -48,9 +48,4 @@ collections:
           - { label: Image, name: image, widget: image }
           - { label: Heading, name: heading, widget: string }
           - { label: Subheading, name: subheading, widget: string }
-          - {
-              label: "Main",
-              name: "main",
-              widget: "object",
-              fields: [{ label: "Body", name: "body", widget: "markdown" }],
-            }
+          - { label: "Body", name: "body", widget: "markdown" }
