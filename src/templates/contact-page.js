@@ -48,13 +48,15 @@ export const ContactPageTemplate = ({
                     <br />
                     <b>
                       <u>Toll Free:</u>
-                    </b>{" "}
+                    </b>
+                    {"  "}
                     {number}
                     <br />
                     <br />
                     <b>
                       <u>Email:</u>
                     </b>
+                    {"  "}
                     {email}
                     <br />
                     <br />
@@ -63,6 +65,7 @@ export const ContactPageTemplate = ({
                     <b>
                       <u>Note:</u>
                     </b>
+                    {"  "}
                     {note}
                     <br />
                     <br />
