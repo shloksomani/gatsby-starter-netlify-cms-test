@@ -1,6 +1,6 @@
 ---
 templateKey: index-page
-noIndex: false
+noIndex: true
 seo:
   browserTitle: Index
   description: Gatsby with Netlify
