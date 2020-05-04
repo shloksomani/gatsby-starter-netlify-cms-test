@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
-noIndex: true
-googleLink: hello
+noIndex: false
+googleLink: dfhd8fLsj0zv-OgFSRpAtIoEeyMQMrHfZjmc75xQhAA
 seo:
   browserTitle: Index
   description: Gatsby with Netlify
