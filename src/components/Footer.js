@@ -15,8 +15,15 @@ const Footer = class extends React.Component {
               <div className="column is-10">
                 <section className="menu">
                   ©2013-2016 BeMo Academic Consulting Inc. All rights reserved.
-                  <Link to="/"> Disclaimer</Link>
-                  <Link to="/contact"> Contact Us</Link>
+                  <Link to="/" className="footerLink">
+                    <u>Disclaimer & Privacy Policy</u>
+                  </Link>
+                  <a
+                    href="mailto:info@bemoacademicconsulting.com"
+                    className="footerLink"
+                  >
+                    <u>Contact Us</u>
+                  </a>
                 </section>
               </div>
               <div className="column is-2 social">

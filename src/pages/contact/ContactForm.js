@@ -102,8 +102,18 @@ export default class Contact extends React.Component {
                 </div>
               </div>
               <div className="field">
-                <button className="button is-link" type="submit">
+                <button className="button is-link" type="submit" style={{margin:"5px"}}>
                   Send
+                </button>
+                <button
+                  className="button is-link"
+                  type="reset"
+                  style={{margin:"5px"}}
+                  onClick={() => {
+                    this.setState({ name: "", email: "", message: "" });
+                  }}
+                >
+                  Reset
                 </button>
               </div>
             </form>

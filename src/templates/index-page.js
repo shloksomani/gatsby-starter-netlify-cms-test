@@ -5,7 +5,7 @@ import Content, { HTMLContent } from "../components/Content";
 import Helmet from "react-helmet";
 
 import Layout from "../components/Layout";
-import Features from "../components/Features";
+
 
 export const IndexPageTemplate = ({
   title,
@@ -39,7 +39,7 @@ export const IndexPageTemplate = ({
           }}
         >
           <h1
-            className="is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+            className="is-size-2-mobile is-size-2-tablet is-size-1-widescreen"
             style={{
               color: "white",
               lineHeight: "2",
@@ -96,7 +96,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout
       noIndex={frontmatter.noIndex}
-      googleLink={frontmatter.googleLink}
+      
       title={frontmatter.seo.title}
       description={frontmatter.seo.description}
       browserTitle={frontmatter.seo.browserTitle}
@@ -143,7 +143,6 @@ export const pageQuery = graphql`
           title
           description
         }
-        googleLink
         noIndex
       }
     }

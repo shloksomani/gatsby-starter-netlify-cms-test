@@ -92,7 +92,6 @@ const ContactPage = ({ data }) => {
   return (
     <Layout
       noIndex={frontmatter.noIndex}
-      googleLink={frontmatter.googleLink}
       title={frontmatter.seo.title}
       description={frontmatter.seo.description}
       browserTitle={frontmatter.seo.browserTitle}
@@ -138,7 +137,6 @@ export const pageQuery = graphql`
           title
           description
         }
-        googleLink
         noIndex
       }
     }

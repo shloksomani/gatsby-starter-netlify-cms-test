@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "gatsby";
-import github from "../img/github-icon.svg";
 import logo from "../img/logo.png";
 
 const Navbar = class extends React.Component {
@@ -38,11 +37,7 @@ const Navbar = class extends React.Component {
         className="navbar is-transparent"
         role="navigation"
         aria-label="main-navigation"
-        style={{
-          position: "sticky",
-          top: 0,
-          background: "rgba(255, 255, 255 , 0.5)",
-        }}
+        style={{}}
       >
         <div className="container">
           <div className="navbar-brand">
@@ -50,7 +45,7 @@ const Navbar = class extends React.Component {
               <img
                 src={logo}
                 alt="BeMO"
-                style={{ width: "167px", height: "100px" }}
+                style={{ width: "167px", height: "100px", paddingTop: "10px" }}
               />
             </Link>
             {/* Hamburger menu */}

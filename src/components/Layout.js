@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
@@ -6,14 +6,20 @@ import "./all.sass";
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
 import ScrollButton from "./scroolToTop";
+import ReactPixel from "react-facebook-pixel";
+
+const options = {
+  autoConfig: true, // set pixel's autoConfig
+  debug: false, // enable logs
+};
 
 const TemplateWrapper = ({
   children,
   noIndex = false,
-  googleLink = "",
   title,
   browserTitle,
   description,
+  pixelId = "",
 }) => {
   return (
     <div>
@@ -22,11 +28,8 @@ const TemplateWrapper = ({
         <meta name="title" content={title} />
         <title>{browserTitle}</title>
         {noIndex && <meta name="robots" content="noindex" />}
-        {googleLink !== "" && (
-          <meta name="google-site-verification" content={googleLink} />
-        )}
-        <meta name="description" content={description} />
 
+        <meta name="description" content={description} />
         <link
           rel="apple-touch-icon"
           sizes="180x180"

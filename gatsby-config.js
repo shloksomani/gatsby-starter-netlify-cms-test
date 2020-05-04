@@ -1,8 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: "Gatsby + Netlify CMS Starter",
-    description:
-      "This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.",
+    title: "Gatsby + Netlify Approch to the problem",
+    description: "this repo is for the interview process with BeMo",
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -59,6 +58,28 @@ module.exports = {
         ],
       },
     },
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     // The property ID; the tracking code won't be generated without it
+    //     trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID",
+    //     // Defines where to place the tracking script - `true` in the head and `false` in the body
+    //     head: true,
+    //     // Enables Google Optimize using your container Id
+    //     optimizeId: "YOUR_GOOGLE_OPTIMIZE_TRACKING_ID",
+    //     // Enables Google Optimize Experiment ID
+    //     experimentId: "YOUR_GOOGLE_EXPERIMENT_ID",
+    //     // Set Variation ID. 0 for original 1,2,3....
+    //     variationId: "YOUR_GOOGLE_OPTIMIZE_VARIATION_ID",
+    //     // Defers execution of google analytics script after page load
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-plugin-facebook-pixel`,
+    //   options: {
+    //     // pixelId: 'pixel id here',
+    //   },
+    // },
     {
       resolve: "gatsby-plugin-netlify-cms",
       options: {

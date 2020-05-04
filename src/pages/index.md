@@ -1,7 +1,6 @@
 ---
 templateKey: index-page
-noIndex: true
-googleLink: hello
+noIndex: false
 seo:
   browserTitle: Index
   description: Gatsby with Netlify
@@ -12,6 +11,7 @@ heading: CDA Interview Guide
 subheading: "Ultimate Guide to CDA Structured Interview: Tips & Proven
   Strategies to Help You Prepare & Ace Your CDA Interview"
 ---
+
 **Overview:**\
 \
 The purpose of the dental school interview\
@@ -19,10 +19,11 @@ History and rationale of the CDA interview\
 Types of Questions\
 The Seven Competencies\
 Structure of the CDA interview\
-How to prepare for your CDA Interview\
-Sample CDA interview questions\
-BeMo CDA-structured interview prep program\
-Contact us\
+[How to prepare for your CDA Interview](https://frosty-shaw-5cf4a5.netlify.app/) \
+[Sample CDA interview questions](https://frosty-shaw-5cf4a5.netlify.app/) \
+[BeMo CDA-structured interview prep program](https://frosty-shaw-5cf4a5.netlify.app/) \
+[Contact us](https://frosty-shaw-5cf4a5.netlify.app/contact)
+
 \
 **What is the purpose of the dental school interview?**\
 \
@@ -82,11 +83,11 @@ Notice in the above examples that the SI sample question is addressing the compe
 \
 The CDA structured interview is comprised of seven questions, one for each of the seven competencies described above. Each question, which can either be a SI or a PBDI type, is scored on a 5-point scale for a total and a maximum of 35 points by two interviewers who are either a pair of dentists, or senior dental students. The interview usually takes about 20-30 minutes to be completed.\
 \
-Click [here](http://cdainterview.com/how-to-prepare-for-cda-interview.html "How To Prepare") to learn how to prepare for your CDA interview\
+Click [here](https://frosty-shaw-5cf4a5.netlify.app/ "How To Prepare") to learn how to prepare for your CDA interview\
 \
-Click [here](http://cdainterview.com/sample-cda-interview-questions.html "CDA Interview Questions") to practice with our sample CDA interview questions\
+Click [here](https://frosty-shaw-5cf4a5.netlify.app/ "CDA Interview Questions") to practice with our sample CDA interview questions\
 \
-Click [here](http://bemoacademicconsulting.com/Dental-School-Interview-Preparation.html) to learn more about our money-back guarantee CDA interview preparation programs.\
+Click [here](https://frosty-shaw-5cf4a5.netlify.app/) to learn more about our money-back guarantee CDA interview preparation programs.\
 \
 **Reference:**\
 \

@@ -31,7 +31,6 @@ collections:
               widget: "boolean",
               default: false,
             }
-          - { label: "Google Link", name: "googleLink", widget: "string" }
           - {
               label: "SEO & Meta",
               name: "seo",
@@ -53,7 +52,6 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Image", name: "image", widget: "image" }
-          - { label: "Heading", name: "heading", widget: "string" }
           - { label: "Subheading", name: "subheading", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
       - file: "src/pages/contact/index.md"
@@ -72,7 +70,6 @@ collections:
               widget: "boolean",
               default: false,
             }
-          - { label: "Google Link", name: "googleLink", widget: "string" }
           - {
               label: "SEO & Meta",
               name: "seo",

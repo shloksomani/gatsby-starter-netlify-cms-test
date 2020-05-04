@@ -11,7 +11,6 @@ $body-color: #333
 $black: #2b2523
 $link: #000066
 
-
 .navbar .navbar-menu
   box-shadow:none !important
 
@@ -92,10 +91,19 @@ $link: #000066
 footer.footer
   padding: 3rem 0rem 0rem
   background-color: transparent
+  font-size: 14px
 
+p a 
+  color: #FF6600
 
+a:hover
+  color: grey
 
-
+.footerLink
+  color: #FF6600
+  padding: 3px
+  &:hover
+    color: grey
 
 $navbar-item-hover-color: none !important
 
@@ -181,6 +189,11 @@ footer .content
   .scroll 
     display: none
   
-
+@media (min-width: 560px)
+  .navbar
+    position: sticky !important;
+    top: 0 !important;
+    background: rgba(255, 255, 255 , 0.5) !important;
+    position: -webkit - sticky !important;
     
   
