@@ -88,20 +88,14 @@ ContactPageTemplate.propTypes = {
 const ContactPage = ({ data }) => {
   console.log(data);
   const { frontmatter } = data.markdownRemark;
-  const { markdownRemark: page } = data;
-  const {
-    frontmatter: {
-      seo: { title: seoTitle, description: seoDescription, browserTitle },
-    },
-  } = page;
 
   return (
     <Layout
       noIndex={frontmatter.noIndex}
       googleLink={frontmatter.googleLink}
-      title={seoTitle}
-      description={seoDescription}
-      browserTitle={browserTitle}
+      title={frontmatter.seo.title}
+      description={frontmatter.seo.description}
+      browserTitle={frontmatter.seo.browserTitle}
     >
       <ContactPageTemplate
         image={frontmatter.image}

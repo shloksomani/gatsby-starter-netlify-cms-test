@@ -22,7 +22,7 @@ const TemplateWrapper = ({
         <meta name="title" content={title} />
         <title>{browserTitle}</title>
         {noIndex && <meta name="robots" content="noindex" />}
-        {googleLink != "" && (
+        {googleLink !== "" && (
           <meta name="google-site-verification" content={googleLink} />
         )}
         <meta name="description" content={description} />
