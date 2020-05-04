@@ -37,7 +37,7 @@ export default class Contact extends React.Component {
 
   render() {
     return (
-      <section className="section">
+      <div>
         <div className="container">
           <div className="content">
             <h1>Contact</h1>
@@ -109,7 +109,7 @@ export default class Contact extends React.Component {
             </form>
           </div>
         </div>
-      </section>
+      </div>
     );
   }
 }

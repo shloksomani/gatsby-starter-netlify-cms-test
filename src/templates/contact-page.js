@@ -2,13 +2,28 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 import Contact from "../pages/contact/ContactForm";
+import Helmet from "react-helmet";
 
 import Layout from "../components/Layout";
-import Features from "../components/Features";
 
-export const ContactPageTemplate = ({ title, heading, subheading }) => (
+export const ContactPageTemplate = ({
+  image,
+  heading,
+  email,
+  number,
+  note,
+}) => (
   <div>
-    <div className="full-width-image margin-top-0" style={{}}>
+    <div
+      className="full-width-image margin-top-0"
+      style={{
+        backgroundImage: `url(${
+          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+        })`,
+        backgroundPosition: `center`,
+        backgroundAttachment: `fixed`,
+      }}
+    >
       <div
         style={{
           display: "flex",
@@ -18,46 +33,39 @@ export const ContactPageTemplate = ({ title, heading, subheading }) => (
           alignItems: "left",
           flexDirection: "column",
         }}
-      >
-        <h1
-          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-          style={{
-            boxShadow:
-              "rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px",
-            backgroundColor: "rgb(255, 68, 0)",
-            color: "white",
-            lineHeight: "1",
-            padding: "0.25em",
-          }}
-        >
-          {title}
-        </h1>
-        <h3
-          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-          style={{
-            boxShadow:
-              "rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px",
-            backgroundColor: "rgb(255, 68, 0)",
-            color: "white",
-            lineHeight: "1",
-            padding: "0.25em",
-          }}
-        >
-          {subheading}
-        </h3>
-      </div>
+      ></div>
     </div>
     <section className="section section--gradient">
       <div className="container">
         <div className="section">
           <div className="columns">
-            <div className="column is-10 is-offset-1">
+            <div className="column is-10">
               <div className="content">
                 <div className="columns">
                   <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      {heading}
-                    </h3>
+                    <b>{heading}</b>
+                    <br />
+                    <br />
+                    <b>
+                      <u>Toll Free:</u>
+                    </b>{" "}
+                    {number}
+                    <br />
+                    <br />
+                    <b>
+                      <u>Email:</u>
+                    </b>
+                    {email}
+                    <br />
+                    <br />
+                    <Contact />
+                    <br />
+                    <b>
+                      <u>Note:</u>
+                    </b>
+                    {note}
+                    <br />
+                    <br />
                   </div>
                 </div>
               </div>
@@ -70,23 +78,38 @@ export const ContactPageTemplate = ({ title, heading, subheading }) => (
 );
 
 ContactPageTemplate.propTypes = {
-  title: PropTypes.string,
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   heading: PropTypes.string,
-  subheading: PropTypes.string,
+  number: PropTypes.string,
+  email: PropTypes.string,
+  note: PropTypes.string,
 };
 
 const ContactPage = ({ data }) => {
   console.log(data);
   const { frontmatter } = data.markdownRemark;
+  const { markdownRemark: page } = data;
+  const {
+    frontmatter: {
+      seo: { title: seoTitle, description: seoDescription, browserTitle },
+    },
+  } = page;
 
   return (
-    <Layout>
+    <Layout
+      noIndex={frontmatter.noIndex}
+      googleLink={frontmatter.googleLink}
+      title={seoTitle}
+      description={seoDescription}
+      browserTitle={browserTitle}
+    >
       <ContactPageTemplate
-        title={frontmatter.title}
+        image={frontmatter.image}
         heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
+        email={frontmatter.email}
+        number={frontmatter.number}
+        note={frontmatter.note}
       />
-      <Contact />
     </Layout>
   );
 };
@@ -105,9 +128,24 @@ export const pageQuery = graphql`
   query ContactPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "contact-page" } }) {
       frontmatter {
-        title
         heading
-        subheading
+        number
+        email
+        note
+        image {
+          childImageSharp {
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        seo {
+          browserTitle
+          title
+          description
+        }
+        googleLink
+        noIndex
       }
     }
   }

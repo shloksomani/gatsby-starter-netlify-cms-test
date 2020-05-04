@@ -4,6 +4,12 @@ title: CDA Interview Guide
 heading: CDA Interview Guide
 image: /img/banner.jpg
 subheading: "Ultimate Guide to CDA Structured Interview: Tips & Proven Strategies to Help You Prepare & Ace Your CDA Interview"
+noIndex: true
+seo:
+  browserTitle: Index
+  description: Gatsby with Netlify
+  title: index
+googleLink: ""
 ---
 
 ### Shade-grown coffee

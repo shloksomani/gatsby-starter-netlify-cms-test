@@ -2,15 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ContactPageTemplate } from "../../templates/contact-page";
 
-export const ContactPagePreview = ({ entry, getAsset }) => {
+export const ContactPagePreview = ({ entry, getAsset, widgetFor }) => {
   const data = entry.getIn(["data"]).toJS();
 
   if (data) {
     return (
       <ContactPageTemplate
-        title={data.title}
+        image={getAsset(data.image)}
         heading={data.heading}
-        subheading={data.subheading}
+        email={data.email}
+        number={data.number}
+        note={data.note}
+        noIndex={widgetFor("noIndex")}
       />
     );
   } else {
@@ -23,4 +26,5 @@ ContactPagePreview.propTypes = {
     getIn: PropTypes.func,
   }),
   getAsset: PropTypes.func,
+  widgetFor: PropTypes.func,
 };

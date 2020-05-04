@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 import Content, { HTMLContent } from "../components/Content";
+import Helmet from "react-helmet";
 
 import Layout from "../components/Layout";
 import Features from "../components/Features";
@@ -42,11 +43,10 @@ export const IndexPageTemplate = ({
             style={{
               color: "white",
               lineHeight: "2",
-              padding: "0.25em",
+              padding: "0.25em 1.5rem",
               letterSpacing: "5px",
               borderBottom: "3px solid white",
               display: "inline-block",
-              padding: "0 1.5rem",
               paddingBottom: "10px",
             }}
           >
@@ -61,8 +61,8 @@ export const IndexPageTemplate = ({
               <div className="column is-10 is-offset-1">
                 <div className="content">
                   <div className="columns">
-                    <div className="column is-12" style={{ color: "#000066" }}>
-                      {subheading}
+                    <div className="column is-12">
+                      <div style={{ color: "#000066" }}>{subheading}</div>
                       <br />
                       <br />
                       <div>
@@ -92,9 +92,21 @@ IndexPageTemplate.propTypes = {
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
+  const { markdownRemark: page } = data;
+  const {
+    frontmatter: {
+      seo: { title: seoTitle, description: seoDescription, browserTitle },
+    },
+  } = page;
 
   return (
-    <Layout>
+    <Layout
+      noIndex={frontmatter.noIndex}
+      googleLink={frontmatter.googleLink}
+      title={seoTitle}
+      description={seoDescription}
+      browserTitle={browserTitle}
+    >
       <IndexPageTemplate
         content={data.markdownRemark.html}
         contentComponent={HTMLContent}
@@ -132,6 +144,13 @@ export const pageQuery = graphql`
             }
           }
         }
+        seo {
+          browserTitle
+          title
+          description
+        }
+        googleLink
+        noIndex
       }
     }
   }
