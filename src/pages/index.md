@@ -7,7 +7,6 @@ seo:
   title: index
 title: CDA Interview Guide
 image: /img/banner.jpg
-heading: CDA Interview Guide
 subheading: "Ultimate Guide to CDA Structured Interview: Tips & Proven
   Strategies to Help You Prepare & Ace Your CDA Interview"
 ---

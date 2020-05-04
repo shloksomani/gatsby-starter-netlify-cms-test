@@ -10,7 +10,6 @@ export const IndexPagePreview = ({ entry, getAsset, widgetFor }) => {
       <IndexPageTemplate
         image={getAsset(data.image)}
         title={data.title}
-        heading={data.heading}
         subheading={data.subheading}
         description={data.description}
         seo={data.seo}

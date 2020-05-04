@@ -6,10 +6,8 @@ import Helmet from "react-helmet";
 
 import Layout from "../components/Layout";
 
-
 export const IndexPageTemplate = ({
   title,
-  heading,
   image,
   subheading,
   content,
@@ -84,7 +82,6 @@ export const IndexPageTemplate = ({
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
-  heading: PropTypes.string,
   description: PropTypes.string,
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
@@ -96,7 +93,6 @@ const IndexPage = ({ data }) => {
   return (
     <Layout
       noIndex={frontmatter.noIndex}
-      
       title={frontmatter.seo.title}
       description={frontmatter.seo.description}
       browserTitle={frontmatter.seo.browserTitle}
@@ -129,7 +125,6 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        heading
         subheading
         image {
           childImageSharp {
