@@ -37,7 +37,7 @@ export const IndexPageTemplate = ({
           }}
         >
           <h1
-            className="is-size-2-mobile is-size-2-tablet is-size-1-widescreen"
+            className="is-size-2-mobile is-size-2-tablet is-size-1-widescreen headingPhoto"
             style={{
               color: "white",
               lineHeight: "2",
