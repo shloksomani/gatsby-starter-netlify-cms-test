@@ -13,6 +13,9 @@ export const IndexPagePreview = ({ entry, getAsset, widgetFor }) => {
         heading={data.heading}
         subheading={data.subheading}
         description={data.description}
+        seo={data.seo}
+        noIndex={widgetFor("noIndex")}
+        googleLink={data.googleLink}
         content={widgetFor("body")}
       />
     );

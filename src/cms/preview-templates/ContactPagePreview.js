@@ -14,6 +14,8 @@ export const ContactPagePreview = ({ entry, getAsset, widgetFor }) => {
         number={data.number}
         note={data.note}
         noIndex={widgetFor("noIndex")}
+        seo={data.seo}
+        googleLink={data.googleLink}
       />
     );
   } else {
